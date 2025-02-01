@@ -14,8 +14,8 @@ body{
 }
 
 #logo{
-    height: 52px;
-    width: 52px;
+    height: 102px;
+    width: 102px;
     border-radius: 100%;
 }
 
@@ -87,4 +87,13 @@ body{
 .hero .btn:hover {
     background-color: #7a1e50;
     border-color: #7a1e50;
+}
+
+body::-webkit-scrollbar{
+    width: 14px;
+    background-color: darkblue;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: rgb(162, 17, 121);
+    border-radius: 25px;
 }

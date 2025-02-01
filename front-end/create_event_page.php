@@ -2,14 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php require_once "./cdn.html"; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Event</title>
 </head>
 <body>
 <?php 
+session_start() ;
 require_once "./navbar.php"; 
-require_once "./cdn.html"; 
+if(isset($_SESSION['email'])) {
 ?>
 
     <div class="container mt-5">
@@ -36,14 +38,20 @@ require_once "./cdn.html";
                                 <label for="max_capacity" class="form-label">Max Capacity</label>
                                 <input type="number" class="form-control" id="max_capacity" name="max_capacity" placeholder="Max Capacity" required>
                             </div>
-                            <button type="submit" name="event_save" class="btn btn-primary w-100">Create Event</button>
+                            <button type="submit" name="event_save" class="btn btn-primary w-100  mb-2">Create Event</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <?php require_once "./footer.html" ?>
+    <?php 
+    require_once "./footer.html" ;
+
+    }else{
+        header("location:./login_page.php") ;
+    }
+    ?>
     <!-- Bootstrap JS (Optional for advanced functionality) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

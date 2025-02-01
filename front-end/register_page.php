@@ -76,7 +76,7 @@
             $insert = "INSERT INTO users(full_name, email, user_password) VALUES ('$full_name', '$email', '$hash_password')";
 
             if (mysqli_query($connection, $insert)) {
-                header("Location: ../front-end/login_page.php");
+                header("Location: ./login_page.php");
                 exit();
             } else {
                 ?>
@@ -86,6 +86,9 @@
                         icon: "warning",
                         timer: 3500
                     });
+                    setTimeout(() => {
+                        window.location="./register_page.php" ;
+                   }, 3500);
                 </script>
                 <?php
             }
@@ -95,7 +98,7 @@
     ?>
 
     <br><br>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
+    <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post"
         class="was-validated w-50 mx-auto shadow-lg p-5 bg-body-tertiary rounded">
         <div class="text-center mb-4">
             <h3>Register</h3>

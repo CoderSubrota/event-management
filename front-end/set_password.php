@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php require_once "../cdn.html"; ?>
+    <?php require_once "./cdn.html"; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset password</title>
@@ -13,7 +13,7 @@
 <?php
 session_start() ;
 
-require_once "../../back-end/config.php";
+require_once "../back-end/config.php";
 
     if (isset($_POST['reset'])) {
         $password = $_POST['password'];
@@ -77,6 +77,7 @@ require_once "../../back-end/config.php";
         }
     
       }
+      require_once "./navbar.php" ;
     ?>
 
     <div class="container my-5">
@@ -107,7 +108,7 @@ require_once "../../back-end/config.php";
             </div>
         </div>
     </div>
-
+<?php  require_once "./footer.html" ;?>
 </body>
 
 </html>

@@ -13,7 +13,9 @@
 
 <?php
     session_start() ;
-
+    if(!isset($_SESSION['email'])) {
+        header("location:./login_page.php") ;
+    }
     require_once "./navbar.php";
     require_once "../back-end/config.php";
 

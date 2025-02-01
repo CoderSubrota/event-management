@@ -76,11 +76,11 @@ if (isset($_POST['login'])) {
 
                             <button type="submit" name="login" class="btn btn-primary w-100">Login</button>
 
-                               <div class="my-3 text-center">
+                               <div class="my-2 text-center">
                              <span>  Create new account ?   </span>   <a href="./register_page.php" > Register </a> 
                             </div>    
                                <div class="mb-2 text-center">
-                             <span> Forgot password ?   </span>   <a href="./users/reset_password.php" > click </a> 
+                             <span> Forgot password ?   </span>   <a href="./reset_password.php" > Reset </a> 
                             </div>    
                         </form>
                     </div>

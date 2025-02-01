@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg py-3 mb-3" id="navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="./home.php">
-      <img src="https://i.ibb.co.com/9Kcm93Q/event-Logo.jpg" alt="log" id="logo"/>
+      <img src="https://i.ibb.co.com/C36T3NWw/myld-removebg-preview.png" alt="log" id="logo"/>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <i class="fa-solid fa-bars text-white fs-2 fw-bold"></i>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
