@@ -33,10 +33,6 @@
         $get_participant = "SELECT * FROM participants WHERE event_id='$event_id'";
         $participants = mysqli_query($connection, $get_participant);
         $participants_row = mysqli_num_rows($participants);
-
-       
-        
-        
         //Is  participants data are empty
         if ($participants_row  == 0 ) {
             $insert = "INSERT INTO participants(full_name, email,event_id) VALUES ('$full_name', '$email', '$event_id')";
@@ -111,7 +107,9 @@
             <select name="event_id" class="form-control" id="event_id" required>
                 <option value="" disabled selected>Select an event from here</option>
                 <?php
-                $select_events = "SELECT * FROM events";
+                //get user id from file
+                require_once "../back-end/get_user_id.php" ;
+                $select_events = "SELECT * FROM events WHERE created_by='$user_id'";
                 $get_events = mysqli_query($connection, $select_events);
                 while ($row = mysqli_fetch_array($get_events)) {
                     echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';

@@ -2,17 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php require_once "./cdn.html";  ?> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login page</title>
 </head>
 <body>
 <?php 
 session_start() ;
 require_once "./navbar.php"; 
-require_once "./cdn.html"; 
+
 require_once "../back-end/config.php";
 
 if (isset($_POST['login'])) {
@@ -80,6 +79,9 @@ if (isset($_POST['login'])) {
                                <div class="my-3 text-center">
                              <span>  Create new account ?   </span>   <a href="./register_page.php" > Register </a> 
                             </div>    
+                               <div class="mb-2 text-center">
+                             <span> Forgot password ?   </span>   <a href="./users/reset_password.php" > click </a> 
+                            </div>    
                         </form>
                     </div>
                 </div>
@@ -87,7 +89,5 @@ if (isset($_POST['login'])) {
         </div>
     </div>
     <?php require_once "./footer.html"; ?>
-    <!-- Bootstrap JS (Optional for advanced functionality) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
