@@ -10,25 +10,29 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./home.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="./home.php"> <i class="fa-solid fa-house me-1"></i> Home</a>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about"><i class="fa-regular fa-address-card me-1"></i>About</a></li>
+        <li class="nav-item"><a class="nav-link" href="./search_events.php"><i class="fa-regular fa-calendar-check me-1"></i>Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services"><i class="fa-brands fa-servicestack me-1"></i>Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact"><i class="fa-regular fa-id-card me-1"></i>Contact</a></li>
         <?php
         if (isset($_SESSION['email'])) {
           ?>
           <li class="nav-item">
-            <a class="nav-link fw-bolder btn btn-danger " href="../back-end/logout.php">Log Out</a>
+            <a class="nav-link fw-bolder btn btn-danger " href="../back-end/logout.php"> <i class="fa-solid fa-right-from-bracket me-1"></i> Log Out</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-bold " href="../front-end/dashboard.php">Dashboard</a>
+            <a class="nav-link fw-bold " href="../front-end/dashboard.php">
+            <i class="fa-solid fa-gauge"></i>
+           Dashboard
+           </a>
           </li>
         <?php
         } else {
           ?>
-          <li class="nav-item"><a class="nav-link" href="./register_page.php">Register</a></li>
-          <li class="nav-item"><a class="nav-link" href="./login_page.php">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="./register_page.php"><i class="fa-solid fa-right-to-bracket mx-2"></i>Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="./login_page.php"><i class="fa-solid fa-right-to-bracket  mx-2"></i>Login</a></li>
           <?php
         }
         ?>

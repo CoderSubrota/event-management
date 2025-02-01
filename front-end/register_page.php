@@ -38,9 +38,17 @@
    
            if (mysqli_query($connection, $insert)) {
                header("Location: ../front-end/home.php");
-               exit(); // Ensure no further code execution after redirection
+               exit(); 
            } else {
-               echo "Error: " . mysqli_error($connection);
+            ?>
+            <script>
+                Swal.fire({
+                    title: "<?php  echo "Error: " . mysqli_error($connection); ?>",
+                    icon: "warning",
+                    timer: 3500
+                });
+            </script>
+            <?php
            }
        }
    }
@@ -51,12 +59,12 @@
 
         <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" class="was-validated w-50 form  shadow-lg p-5  bg-body-tertiary rounded">
 
-        <div class="col-lg-24 col-md-23 col-sm-34 w-50">
+        <div class="col-lg-2 col-md-2 col-sm-3 w-50">
             <h3> Register </h3>
         </div>
 
             <br>
-            <div class="col-lg-24 col-md-23 col-sm-34">
+            <div class="col-lg-2 col-md-2 col-sm-3">
                 <input type="text" name="full_name" placeholder="Enter your full name" class="form-control"
                     required />
                 <div class="invalid-feedback alert-danger"> Enter your real name </div>
@@ -64,7 +72,7 @@
             </div>
             <br>
 
-            <div class="col-lg-24 col-md-23 col-sm-34">
+            <div class="col-lg-2 col-md-2 col-sm-3">
                 <input type="email" name="email" placeholder="Enter your email" class="form-control" required />
                 <div class="invalid-feedback alert-danger"> Enter valid email </div>
                 <div class="valid-feedback alert-info">Your  email is taking </div>
@@ -73,7 +81,7 @@
             <br>
 
 
-            <div class="col-lg-24 col-md-23 col-sm-34">
+            <div class="col-lg-2 col-md-2 col-sm-3">
                 <input type="password" name="password" placeholder="Enter strong password " class="form-control"
                     required />
                 <div class="invalid-feedback alert-danger"> Create your new password </div>
@@ -82,7 +90,7 @@
             </div>
             <br>
          
-            <div class="col-lg-24 col-md-23 col-sm-34">
+            <div class="col-lg-2 col-md-2 col-sm-3">
                 <button type="submit" name="register"  class="btn btn-primary w-100" > Register </button>
             </div>
             <br>

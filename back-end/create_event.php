@@ -8,16 +8,12 @@ if (!isset($_SESSION['email'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['event_name'];
-    $description = $_POST['description'];
-    $date = $_POST['date'];
-    $max_capacity = $_POST['max_capacity'];
-    //get the user id
-    $select = "SELECT id, email FROM users WHERE email='" . $_SESSION['email'] . "'";
-    $query = mysqli_query($connection, $select);
-    $row = mysqli_fetch_assoc($query) ;
-    $user_id = $row['id'];
-
+    $name = mysqli_real_escape_string($connection,$_POST['event_name']);
+    $description = mysqli_real_escape_string($connection,$_POST['description']);
+    $date = mysqli_real_escape_string($connection,$_POST['date']);
+    $max_capacity = mysqli_real_escape_string($connection,$_POST['max_capacity']);
+    //get user id from file
+    require_once './get_user_id.php' ;
     $insert = "INSERT INTO events (name, description, date, max_capacity, created_by) VALUES ('$name','$description','$date','$max_capacity',' $user_id')";
     $result = mysqli_query($connection, $insert) ;
   

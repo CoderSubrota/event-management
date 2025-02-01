@@ -15,6 +15,8 @@ if (!isset($_SESSION['email'])) {
 $get_events = "SELECT * FROM events WHERE created_by='$user_id' ORDER BY date ASC " ; 
 $events = mysqli_query($connection, $get_events) ;
 
+require_once "../back-end/download_attendees.php" ;
+
 ?>
 
 <!DOCTYPE html>
@@ -26,12 +28,12 @@ $events = mysqli_query($connection, $get_events) ;
     <title>Event Dashboard</title>
    
 </head>
-<body>
+<body id="body">
 <?php
  require_once "./navbar.php"; 
 ?>
     <div class="container mt-5">
-     <h1 class="text-center mb-4">Event Dashboard</h1>
+     <h1 class="text-center mb-4 text-primary">Event Dashboard</h1>
         
 
 <?php  
@@ -57,16 +59,21 @@ if($row_count > 0 ) {
 ?>
 
  
-        <a href="./create_event_page.php" class="btn btn-success mb-3">Create Event</a>
-        
-        <table class="table table-bordered table-hover text-center my-5 table-striped">
+      <div class="flex justify-content-around flex-row">
+      <a href="./create_event_page.php" class="btn btn-success mb-3">Create Event <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="./add_participant.php" class="btn btn-info mb-3">Add participant <i class="fa-solid fa-arrow-right"></i> </a> 
+      </div>
+
+        <table id="eventsTable"  class="table table-bordered mb-1 table-hover display text-center  table-striped">
             <thead class="thead-dark">
                 <t>
                     <th>Name</th>
                     <th>Description</th>
                     <th>Date</th>
                     <th>Max Capacity</th>
-                    <th colspan="2"> Action </th>
+                    <th> Edit </th>
+                    <th> Delete </th>
+                    <th> Download participant </th>
                 </tr>
             </thead>
             <tbody>
@@ -78,6 +85,7 @@ if($row_count > 0 ) {
                         <td><?= htmlspecialchars($event['max_capacity']) ?></td>
                         <td> <a href="./update-event.php?event_id=<?php echo $event['id'] ;?>"> <i class="fa-solid fa-edit text-success"></i> </a>  </td>
                         <td> <a href="../back-end/delete_event.php?event_id=<?php echo $event['id'] ;?>" onclick="return confirm('Are you want to delete this data ?')"> <i class="fa-solid fa-trash text-danger"></i> </a>  </td>
+                        <td> <a href="./dashboard.php?event_id=<?php echo $event['id'] ;?>"> <i class="fa-solid fa-download text-primary"></i> </a>  </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -96,6 +104,18 @@ if($row_count > 0 ) {
 require_once "./footer.html";
 
 ?>
+
+<script>
+    $(document).ready(function () {
+        $('#eventsTable').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true
+        });
+    });
+
+    
+</script>
 </body>
 </html>
 
