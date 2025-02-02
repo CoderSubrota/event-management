@@ -1,12 +1,18 @@
-Now I will discuss about my whole working process.
-So basically I worked with some steps now I am telling about that process :
+# Event Management System
 
-# First Step #
-I worked with database to save data  into mariaDB database.
+## Overview
+This project is a web-based event management system designed to allow users to register, create events, and manage participants. The system follows a structured development approach, including database management, backend logic, frontend design, and deployment.
 
-# Using this queries:
+---
 
-CREATE DATABASE event-management
+## **Development Process**
+
+### **Step 1: Database Setup**
+I created a MariaDB database to store and manage user, event, and participant information.
+
+#### **Database Queries**
+```sql
+CREATE DATABASE event-management;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -31,20 +37,21 @@ CREATE TABLE attendees (
     user_id INT NOT NULL,
     FOREIGN KEY (event_id) REFERENCES events(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
-); 
+);
 
-CREATE TABLE participants(
+CREATE TABLE participants (
      id INT AUTO_INCREMENT PRIMARY KEY,
      full_name VARCHAR(225),
      email VARCHAR(252) UNIQUE NOT NULL,
      event_id INT(28)
-)
+);
+```
 
-# Than I connect this database with my localhost using this code :
-
-
+### **Database Connection**
+The database is connected to the localhost using the following PHP script:
+```php
 <?php
-$host = "localhost"; 
+$host = "localhost";
 $username = "root";
 $password = "";
 $database = "event-management";
@@ -52,42 +59,84 @@ $port = 3308;
 
 $connection = mysqli_connect($host, $username, $password, $database, $port);
 ?>
+```
+Make sure to modify the port number if it differs on your local server.
 
-you can change your port if it is different.
+---
 
-# Second Step #
+### **Step 2: Project Structure**
+The project is organized into separate directories for clarity:
+- **frontend/** - Contains all frontend files
+- **backend/** - Contains PHP scripts for handling CRUD operations
+- **css/** - Contains stylesheets for better UI/UX
 
-I created some directory like front-end, back-end and css to get the clear idea about code.
+#### **Important Files:**
+- `home.php` - Landing page
+- `config.php` - Database configuration
+- `cdn.html` - Integrates Bootstrap and Google Fonts
+- `index.php` - Secures all files
+- `navbar.php` & `footer.html` - Shared across all pages
+- `style.css` - Custom styles
 
-I used database configuration to connect with database the file name is config.php and session for get track the authenticate user and I build CRUD 
-operation for events and users.Only admin can access the participant download
-table column and show users for CRUD.
+#### **Core Features:**
+- CRUD operations for users and events
+- User authentication (Login & Registration)
+- Admin panel for participant data management
+- Secure session handling
+- Responsive UI with Bootstrap
 
-I use require_once to include the files. I created files some of them :
+Once completed, the files were pushed to GitHub for version control.
 
--> home.php for landing page
+---
 
--> config.php for configuration the database
+### **Step 3: Deployment**
+The project was hosted on a free hosting service (https://www.infinityfree.com/). Due to limitations of free hosting, security and uptime may be unstable.
 
--> cdn.html for work with content delivery network like bootstrap and google font family
+🔗 **Live Website:** [Event Management System](http://event-management-bd.rf.gd/front-end/home.php)
 
--> index.php to secure the all files
+If the website doesn't load properly, you can set up and run the project locally using the database files from GitHub.
 
--> navbar.php and footer.html to share with all files
+---
 
--> style.css to add more style or color for html 
+## **GitHub Repository**
+📌 [GitHub Repository](https://github.com/CoderSubrota/event-management)
 
-after completed my task so far I did. I deployed the files to GitHub.
+---
 
-# Third step
+## **Login Credentials**
+### **User Login**
+- **Email:** davidkrish22@gmail.com
+- **Password:** David1234###
 
-I host the website in (https://www.infinityfree.com/) to share with you the live link of this website. I think it will not work because this is free hosting service and unsecure live link.Sorry, to say I can't afford a paid domain for this task.
+### **Admin Login**
+- **Email:** subrota12@gmail.com
+- **Password:** Subrota7867@%
+
+---
+
+## **How to Set Up Locally?**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/CoderSubrota/event-management.git
+   ```
+2. Import the database from the `database` directory in the GitHub repository.
+3. Run a local server using XAMPP or WAMP.
+4. Update the database connection in `config.php`.
+5. Access the project via `localhost/front-end/home.php`.
+
+---
+
+## **Future Enhancements**
+- Implementing a payment gateway for event registration
+- Adding email notifications for event confirmations
+- Enhancing security with prepared statements and hashing
+- Deploying on a secure paid hosting platform
+
+This project demonstrates a structured approach to full-stack web development, covering database management, backend development, frontend design, and deployment. 🚀
+
 
 >>  You can check this code locally if the provided live website link showing some error. You can get my database in GitHub Repository just go to the database directory you will get the database.
 
-# GitHub Repository Link
-
-# Live Website Link
 
 # User login information
 
@@ -101,4 +150,10 @@ Password : David1234###
 Email: subrota12@gmail.com
 Password: Subrota7867@%
 
+---------------------------------
+---------------------------------
 
+# <<<< Kindly check this code using localhost live website is not working >>>>
+
+---------------------------------
+---------------------------------

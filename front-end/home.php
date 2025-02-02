@@ -30,7 +30,7 @@
     <!-- Carousel section  -->
     <section>
         <div class="container mt-5">
-            <h1 class="fs-2 fw-bold text-center text-primary my-5"> ** Our Events **</h1>
+            <h1 class="fs-2 fw-bold text-center text-primary my-5">  Our Events </h1>
 
             <div id="eventCarousel" class="carousel slide shadow-lg rounded overflow-hidden" data-bs-ride="carousel">
                 <!-- Indicators -->
@@ -96,7 +96,7 @@
     <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container text-center">
-            <h2 class="text-primary"> **About Us**</h2>
+            <h2 class="text-primary fw-bold"> About Us </h2>
             <p class="mt-3">
                 We specialize in organizing weddings, corporate events, and private parties, ensuring a seamless and
                 memorable experience for our clients. Our dedicated team takes care of every detail, from venue
@@ -128,7 +128,7 @@
     <!-- Services Section -->
     <section id="services" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5 text-primary">Our Services</h2>
+            <h2 class="text-center mb-5 text-primary fw-bold">Our Services</h2>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="card shadow">
