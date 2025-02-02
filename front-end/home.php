@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <?php
     session_start();
     require_once "./navbar.php";
@@ -97,31 +96,31 @@
     <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container text-center">
-            <h2> **About Us**</h2>
+            <h2 class="text-primary"> **About Us**</h2>
             <p class="mt-3">
                 We specialize in organizing weddings, corporate events, and private parties, ensuring a seamless and
                 memorable experience for our clients. Our dedicated team takes care of every detail, from venue
                 selection and décor to catering, entertainment, and logistics. Whether you're planning an intimate
                 gathering or a grand celebration, we tailor our services to meet your specific needs and vision.
                 <br> <br>
-               <h2> **Weddings**</h2>
-                We bring dream weddings to life with elegant themes, breathtaking floral arrangements, and exquisite
-                catering. From traditional ceremonies to modern destination weddings, our planners handle everything,
-                including guest accommodations, photography, and music.
-               <br> <br>
-               **Corporate Events**
-                Our expertise extends to corporate gatherings such as conferences, product launches, and award
-                ceremonies. We manage event branding, audiovisual setups, keynote speaker coordination, and seamless
-                execution to leave a lasting impression on attendees.
-                <br> <br>
-               <h2> **Private Parties**</h2>
-                From birthdays and anniversaries to themed parties, we create personalized experiences with customized
-                décor, gourmet menus, and engaging entertainment. Whether it’s a formal gala or a casual backyard event,
-                we ensure a stress-free and enjoyable experience.
-                <br>
-                With meticulous attention to detail, innovative ideas, and a passion for excellence, we guarantee events
-                that exceed expectations. Let us turn your special occasion into an unforgettable experience. Contact us
-                today to start planning your next event!
+            <h2> **Weddings**</h2>
+            We bring dream weddings to life with elegant themes, breathtaking floral arrangements, and exquisite
+            catering. From traditional ceremonies to modern destination weddings, our planners handle everything,
+            including guest accommodations, photography, and music.
+            <br> <br>
+            **Corporate Events**
+            Our expertise extends to corporate gatherings such as conferences, product launches, and award
+            ceremonies. We manage event branding, audiovisual setups, keynote speaker coordination, and seamless
+            execution to leave a lasting impression on attendees.
+            <br> <br>
+            <h2> **Private Parties**</h2>
+            From birthdays and anniversaries to themed parties, we create personalized experiences with customized
+            décor, gourmet menus, and engaging entertainment. Whether it’s a formal gala or a casual backyard event,
+            we ensure a stress-free and enjoyable experience.
+            <br>
+            With meticulous attention to detail, innovative ideas, and a passion for excellence, we guarantee events
+            that exceed expectations. Let us turn your special occasion into an unforgettable experience. Contact us
+            today to start planning your next event!
             </p>
         </div>
     </section>
@@ -129,7 +128,7 @@
     <!-- Services Section -->
     <section id="services" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">Our Services</h2>
+            <h2 class="text-center mb-5 text-primary">Our Services</h2>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="card shadow">
@@ -167,14 +166,6 @@
 
 
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container text-center">
-            <h2>Contact Us</h2>
-            <p class="mt-3">Have questions? Reach out to us anytime.</p>
-            <a href="mailto:info@eventify.com" class="btn btn-outline-dark">Email Us</a>
-        </div>
-    </section>
 
     <?php require_once "./footer.html"; ?>
 

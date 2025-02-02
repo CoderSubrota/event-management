@@ -94,6 +94,6 @@ body::-webkit-scrollbar{
     background-color: darkblue;
 }
 body::-webkit-scrollbar-thumb{
-    background-color: rgb(162, 17, 121);
+    background-color: rgb(20, 167, 187);
     border-radius: 25px;
 }

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Register </title>
+    <title> Add user </title>
 </head>
 
 <body class="body">
@@ -77,7 +77,8 @@
             $insert = "INSERT INTO users(full_name, email, user_password) VALUES ('$full_name', '$email', '$hash_password')";
 
             if (mysqli_query($connection, $insert)) {
-                header("Location: ./login_page.php");
+                $_SESSION['message'] = 'New user '. $full_name . ' added successfully !!' ; 
+                header("Location: ./show_users.php");
                 exit();
             } else {
                 ?>
@@ -102,17 +103,17 @@
     <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post"
         class="was-validated w-50 mx-auto shadow-lg p-5 bg-body-tertiary rounded">
         <div class="text-center mb-4">
-            <h3>Register</h3>
+            <h3>Add User</h3>
         </div>
 
         <div class="mb-3">
-            <input type="text" name="full_name" placeholder="Enter your full name" class="form-control" required />
+            <input type="text" name="full_name" placeholder="Enter user full name" class="form-control" required />
             <div class="invalid-feedback">Please enter your real name.</div>
             <div class="valid-feedback">Looks good!</div>
         </div>
 
         <div class="mb-3">
-            <input type="email" name="email" placeholder="Enter your email" class="form-control" required />
+            <input type="email" name="email" placeholder="Enter user email" class="form-control" required />
             <div class="invalid-feedback">Please enter a valid email address.</div>
             <div class="valid-feedback">Looks good!</div>
         </div>
@@ -130,17 +131,8 @@
             <div class="valid-feedback">Looks good!</div>
         </div>
 
-        <div class="form-check mb-3">
-            <input class="form-check-input" type="checkbox" id="terms" required />
-            <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
-        </div>
 
-        <button type="submit" name="register" class="btn btn-primary w-100">Register</button>
-
-        <div class="text-center mt-3">
-            <strong>Already have an account?</strong>
-            <a href="./login_page.php" class="ms-2">Login</a>
-        </div>
+        <button type="submit" name="register" class="btn btn-primary w-100">Save</button>
     </form>
 
     <br><br>

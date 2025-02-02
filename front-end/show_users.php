@@ -11,7 +11,6 @@
 session_start() ;
 if( !isset($_SESSION['email']) || $_SESSION['email'] !='subrota12@gmail.com' ) {
     require_once "../back-end/logout.php" ;
-    header("location:./login_page.php") ;
 }
 require_once "../back-end/config.php" ;
 
@@ -23,7 +22,7 @@ if( isset($_SESSION['message']) && $_SESSION['message']!='' ){
     <script>
         Swal.fire({
             html: "<div class='text-white'> <?php echo $_SESSION['message']; ?></div>",
-            icon: "warning",
+            icon: "success",
             timer: 3500
         });
     </script>
@@ -41,6 +40,7 @@ if( isset($_SESSION['message']) && $_SESSION['message']!='' ){
 
     <div class="mt-4 mx-2">
      <h2 class="fs-1 fw-bold text-center my-5 text-primary"> Users Data </h2>
+     <a href="./add-user.php" class="btn btn-primary mx-auto my-5 fs-5 fw-bold"> Add User<i class="fa-solid fa-plus mx-2"></i> </a>
         <table id="usersTable"  class="table table-bordered my-5 table-hover display text-center  table-striped">
             <thead class="thead-dark">
                 <tr>
